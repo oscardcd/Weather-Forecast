@@ -3,14 +3,14 @@ import 'package:dio/dio.dart';
 
 import 'model/api_result.dart';
 
-class ApiClient {
-  ApiClient._privateConstructor();
-  static final ApiClient _instance = ApiClient._privateConstructor();
+class ClientApi {
+  ClientApi._privateConstructor();
+  static final ClientApi _instance = ClientApi._privateConstructor();
 
-  static ApiClient get instance => _instance;
+  static ClientApi get instance => _instance;
   late Dio dio;
 
-  void init({
+  init({
     required String baseUrl,
     required Map<String, Object> headers,
     List<Interceptor>? interceptors,
@@ -27,8 +27,7 @@ class ApiClient {
     }
   }
 
-  Future<ApiResult<T>> request<T>(
-      ApiRequest request, Function(dynamic) fromJson) async {
+  Future<ApiResult<T>> request<T>(ApiRequest request, Function(dynamic) fromJson) async {
     try {
       final response = await _instance.dio.request(request.url,
           data: request.body,
