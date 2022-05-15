@@ -5,7 +5,7 @@ class ApiKeyInterceptor extends Interceptor {
 
   @override
   void onRequest(RequestOptions options, RequestInterceptorHandler handler) {
-    options.queryParameters.addAll({'api_key': _key});
+    options.queryParameters.addAll({'appid': _key});
     super.onRequest(options, handler);
   }
 }

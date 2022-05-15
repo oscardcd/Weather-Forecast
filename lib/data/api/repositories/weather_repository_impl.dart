@@ -21,7 +21,7 @@ class WeatherRepositoryImpl implements WeatherRepository {
 
   @override
   Future<WeatherDay> getWeatherDayForGeo(int lat, int lon) async {
-    final apiResponse = await _api.getWatherDayByGeo(lat, lon);
+    final apiResponse = await _api.getWeatherDayByGeo(lat, lon);
 
     return apiResponse.when(
       success: (success) => success,

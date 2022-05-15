@@ -8,7 +8,7 @@ import 'package:weather_forecast_app/domain/services/weather_api.dart';
 class WeatherApiImpl implements WeatherApi {
   final clientInstance = ClientApi.instance;
   @override
-  Future<ApiResult<WeatherDay>> getWatherDayByGeo(int lat, int lon) {
+  Future<ApiResult<WeatherDay>> getWeatherDayByGeo(int lat, int lon) {
     return clientInstance.request(
       ApiRequest.get(WeatherEndpoints.byLatAndLon(lat, lon)),
       (p0) => WeatherDay.fromJson(p0),
