@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
-part of 'weather_day_bloc.dart';
+part of 'weather_forecast_bloc.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -15,8 +15,8 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
-class _$WeatherDayStateTearOff {
-  const _$WeatherDayStateTearOff();
+class _$WeatherForecastStateTearOff {
+  const _$WeatherForecastStateTearOff();
 
   _Initial initial() {
     return const _Initial();
@@ -26,7 +26,7 @@ class _$WeatherDayStateTearOff {
     return const _LoadInProgress();
   }
 
-  _FetchWeather fetchWeather(WeatherDay weatherDay) {
+  _FetchWeather fetchWeather(WeatherResponse weatherDay) {
     return _FetchWeather(
       weatherDay,
     );
@@ -34,29 +34,29 @@ class _$WeatherDayStateTearOff {
 }
 
 /// @nodoc
-const $WeatherDayState = _$WeatherDayStateTearOff();
+const $WeatherForecastState = _$WeatherForecastStateTearOff();
 
 /// @nodoc
-mixin _$WeatherDayState {
+mixin _$WeatherForecastState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loadInProgress,
-    required TResult Function(WeatherDay weatherDay) fetchWeather,
+    required TResult Function(WeatherResponse weatherDay) fetchWeather,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loadInProgress,
-    TResult Function(WeatherDay weatherDay)? fetchWeather,
+    TResult Function(WeatherResponse weatherDay)? fetchWeather,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loadInProgress,
-    TResult Function(WeatherDay weatherDay)? fetchWeather,
+    TResult Function(WeatherResponse weatherDay)? fetchWeather,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -85,20 +85,20 @@ mixin _$WeatherDayState {
 }
 
 /// @nodoc
-abstract class $WeatherDayStateCopyWith<$Res> {
-  factory $WeatherDayStateCopyWith(
-          WeatherDayState value, $Res Function(WeatherDayState) then) =
-      _$WeatherDayStateCopyWithImpl<$Res>;
+abstract class $WeatherForecastStateCopyWith<$Res> {
+  factory $WeatherForecastStateCopyWith(WeatherForecastState value,
+          $Res Function(WeatherForecastState) then) =
+      _$WeatherForecastStateCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$WeatherDayStateCopyWithImpl<$Res>
-    implements $WeatherDayStateCopyWith<$Res> {
-  _$WeatherDayStateCopyWithImpl(this._value, this._then);
+class _$WeatherForecastStateCopyWithImpl<$Res>
+    implements $WeatherForecastStateCopyWith<$Res> {
+  _$WeatherForecastStateCopyWithImpl(this._value, this._then);
 
-  final WeatherDayState _value;
+  final WeatherForecastState _value;
   // ignore: unused_field
-  final $Res Function(WeatherDayState) _then;
+  final $Res Function(WeatherForecastState) _then;
 }
 
 /// @nodoc
@@ -108,7 +108,8 @@ abstract class _$InitialCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$InitialCopyWithImpl<$Res> extends _$WeatherDayStateCopyWithImpl<$Res>
+class __$InitialCopyWithImpl<$Res>
+    extends _$WeatherForecastStateCopyWithImpl<$Res>
     implements _$InitialCopyWith<$Res> {
   __$InitialCopyWithImpl(_Initial _value, $Res Function(_Initial) _then)
       : super(_value, (v) => _then(v as _Initial));
@@ -124,7 +125,7 @@ class _$_Initial implements _Initial {
 
   @override
   String toString() {
-    return 'WeatherDayState.initial()';
+    return 'WeatherForecastState.initial()';
   }
 
   @override
@@ -141,7 +142,7 @@ class _$_Initial implements _Initial {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loadInProgress,
-    required TResult Function(WeatherDay weatherDay) fetchWeather,
+    required TResult Function(WeatherResponse weatherDay) fetchWeather,
   }) {
     return initial();
   }
@@ -151,7 +152,7 @@ class _$_Initial implements _Initial {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loadInProgress,
-    TResult Function(WeatherDay weatherDay)? fetchWeather,
+    TResult Function(WeatherResponse weatherDay)? fetchWeather,
   }) {
     return initial?.call();
   }
@@ -161,7 +162,7 @@ class _$_Initial implements _Initial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loadInProgress,
-    TResult Function(WeatherDay weatherDay)? fetchWeather,
+    TResult Function(WeatherResponse weatherDay)? fetchWeather,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -205,7 +206,7 @@ class _$_Initial implements _Initial {
   }
 }
 
-abstract class _Initial implements WeatherDayState {
+abstract class _Initial implements WeatherForecastState {
   const factory _Initial() = _$_Initial;
 }
 
@@ -218,7 +219,7 @@ abstract class _$LoadInProgressCopyWith<$Res> {
 
 /// @nodoc
 class __$LoadInProgressCopyWithImpl<$Res>
-    extends _$WeatherDayStateCopyWithImpl<$Res>
+    extends _$WeatherForecastStateCopyWithImpl<$Res>
     implements _$LoadInProgressCopyWith<$Res> {
   __$LoadInProgressCopyWithImpl(
       _LoadInProgress _value, $Res Function(_LoadInProgress) _then)
@@ -235,7 +236,7 @@ class _$_LoadInProgress implements _LoadInProgress {
 
   @override
   String toString() {
-    return 'WeatherDayState.loadInProgress()';
+    return 'WeatherForecastState.loadInProgress()';
   }
 
   @override
@@ -252,7 +253,7 @@ class _$_LoadInProgress implements _LoadInProgress {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loadInProgress,
-    required TResult Function(WeatherDay weatherDay) fetchWeather,
+    required TResult Function(WeatherResponse weatherDay) fetchWeather,
   }) {
     return loadInProgress();
   }
@@ -262,7 +263,7 @@ class _$_LoadInProgress implements _LoadInProgress {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loadInProgress,
-    TResult Function(WeatherDay weatherDay)? fetchWeather,
+    TResult Function(WeatherResponse weatherDay)? fetchWeather,
   }) {
     return loadInProgress?.call();
   }
@@ -272,7 +273,7 @@ class _$_LoadInProgress implements _LoadInProgress {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loadInProgress,
-    TResult Function(WeatherDay weatherDay)? fetchWeather,
+    TResult Function(WeatherResponse weatherDay)? fetchWeather,
     required TResult orElse(),
   }) {
     if (loadInProgress != null) {
@@ -316,7 +317,7 @@ class _$_LoadInProgress implements _LoadInProgress {
   }
 }
 
-abstract class _LoadInProgress implements WeatherDayState {
+abstract class _LoadInProgress implements WeatherForecastState {
   const factory _LoadInProgress() = _$_LoadInProgress;
 }
 
@@ -325,14 +326,14 @@ abstract class _$FetchWeatherCopyWith<$Res> {
   factory _$FetchWeatherCopyWith(
           _FetchWeather value, $Res Function(_FetchWeather) then) =
       __$FetchWeatherCopyWithImpl<$Res>;
-  $Res call({WeatherDay weatherDay});
+  $Res call({WeatherResponse weatherDay});
 
-  $WeatherDayCopyWith<$Res> get weatherDay;
+  $WeatherResponseCopyWith<$Res> get weatherDay;
 }
 
 /// @nodoc
 class __$FetchWeatherCopyWithImpl<$Res>
-    extends _$WeatherDayStateCopyWithImpl<$Res>
+    extends _$WeatherForecastStateCopyWithImpl<$Res>
     implements _$FetchWeatherCopyWith<$Res> {
   __$FetchWeatherCopyWithImpl(
       _FetchWeather _value, $Res Function(_FetchWeather) _then)
@@ -349,13 +350,13 @@ class __$FetchWeatherCopyWithImpl<$Res>
       weatherDay == freezed
           ? _value.weatherDay
           : weatherDay // ignore: cast_nullable_to_non_nullable
-              as WeatherDay,
+              as WeatherResponse,
     ));
   }
 
   @override
-  $WeatherDayCopyWith<$Res> get weatherDay {
-    return $WeatherDayCopyWith<$Res>(_value.weatherDay, (value) {
+  $WeatherResponseCopyWith<$Res> get weatherDay {
+    return $WeatherResponseCopyWith<$Res>(_value.weatherDay, (value) {
       return _then(_value.copyWith(weatherDay: value));
     });
   }
@@ -367,11 +368,11 @@ class _$_FetchWeather implements _FetchWeather {
   const _$_FetchWeather(this.weatherDay);
 
   @override
-  final WeatherDay weatherDay;
+  final WeatherResponse weatherDay;
 
   @override
   String toString() {
-    return 'WeatherDayState.fetchWeather(weatherDay: $weatherDay)';
+    return 'WeatherForecastState.fetchWeather(weatherDay: $weatherDay)';
   }
 
   @override
@@ -397,7 +398,7 @@ class _$_FetchWeather implements _FetchWeather {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loadInProgress,
-    required TResult Function(WeatherDay weatherDay) fetchWeather,
+    required TResult Function(WeatherResponse weatherDay) fetchWeather,
   }) {
     return fetchWeather(weatherDay);
   }
@@ -407,7 +408,7 @@ class _$_FetchWeather implements _FetchWeather {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loadInProgress,
-    TResult Function(WeatherDay weatherDay)? fetchWeather,
+    TResult Function(WeatherResponse weatherDay)? fetchWeather,
   }) {
     return fetchWeather?.call(weatherDay);
   }
@@ -417,7 +418,7 @@ class _$_FetchWeather implements _FetchWeather {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loadInProgress,
-    TResult Function(WeatherDay weatherDay)? fetchWeather,
+    TResult Function(WeatherResponse weatherDay)? fetchWeather,
     required TResult orElse(),
   }) {
     if (fetchWeather != null) {
@@ -461,18 +462,18 @@ class _$_FetchWeather implements _FetchWeather {
   }
 }
 
-abstract class _FetchWeather implements WeatherDayState {
-  const factory _FetchWeather(WeatherDay weatherDay) = _$_FetchWeather;
+abstract class _FetchWeather implements WeatherForecastState {
+  const factory _FetchWeather(WeatherResponse weatherDay) = _$_FetchWeather;
 
-  WeatherDay get weatherDay;
+  WeatherResponse get weatherDay;
   @JsonKey(ignore: true)
   _$FetchWeatherCopyWith<_FetchWeather> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-class _$WeatherDayEventTearOff {
-  const _$WeatherDayEventTearOff();
+class _$WeatherForecastEventTearOff {
+  const _$WeatherForecastEventTearOff();
 
   _Started started() {
     return const _Started();
@@ -480,10 +481,10 @@ class _$WeatherDayEventTearOff {
 }
 
 /// @nodoc
-const $WeatherDayEvent = _$WeatherDayEventTearOff();
+const $WeatherForecastEvent = _$WeatherForecastEventTearOff();
 
 /// @nodoc
-mixin _$WeatherDayEvent {
+mixin _$WeatherForecastEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
@@ -519,20 +520,20 @@ mixin _$WeatherDayEvent {
 }
 
 /// @nodoc
-abstract class $WeatherDayEventCopyWith<$Res> {
-  factory $WeatherDayEventCopyWith(
-          WeatherDayEvent value, $Res Function(WeatherDayEvent) then) =
-      _$WeatherDayEventCopyWithImpl<$Res>;
+abstract class $WeatherForecastEventCopyWith<$Res> {
+  factory $WeatherForecastEventCopyWith(WeatherForecastEvent value,
+          $Res Function(WeatherForecastEvent) then) =
+      _$WeatherForecastEventCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$WeatherDayEventCopyWithImpl<$Res>
-    implements $WeatherDayEventCopyWith<$Res> {
-  _$WeatherDayEventCopyWithImpl(this._value, this._then);
+class _$WeatherForecastEventCopyWithImpl<$Res>
+    implements $WeatherForecastEventCopyWith<$Res> {
+  _$WeatherForecastEventCopyWithImpl(this._value, this._then);
 
-  final WeatherDayEvent _value;
+  final WeatherForecastEvent _value;
   // ignore: unused_field
-  final $Res Function(WeatherDayEvent) _then;
+  final $Res Function(WeatherForecastEvent) _then;
 }
 
 /// @nodoc
@@ -542,7 +543,8 @@ abstract class _$StartedCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$StartedCopyWithImpl<$Res> extends _$WeatherDayEventCopyWithImpl<$Res>
+class __$StartedCopyWithImpl<$Res>
+    extends _$WeatherForecastEventCopyWithImpl<$Res>
     implements _$StartedCopyWith<$Res> {
   __$StartedCopyWithImpl(_Started _value, $Res Function(_Started) _then)
       : super(_value, (v) => _then(v as _Started));
@@ -558,7 +560,7 @@ class _$_Started implements _Started {
 
   @override
   String toString() {
-    return 'WeatherDayEvent.started()';
+    return 'WeatherForecastEvent.started()';
   }
 
   @override
@@ -627,6 +629,6 @@ class _$_Started implements _Started {
   }
 }
 
-abstract class _Started implements WeatherDayEvent {
+abstract class _Started implements WeatherForecastEvent {
   const factory _Started() = _$_Started;
 }

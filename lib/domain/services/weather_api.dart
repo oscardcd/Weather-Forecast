@@ -1,7 +1,8 @@
 import 'package:client_api/client_api.dart';
-import 'package:weather_forecast_app/domain/models/weather_day.dart';
+import 'package:weather_forecast_app/domain/models/geolocator_request.dart';
+import 'package:weather_forecast_app/domain/models/weather_response.dart';
 
 abstract class WeatherApi {
-  Future<ApiResult<WeatherDay>> getWeatherDayByGeo(int lat, int lon);
-  Future<ApiResult<WeatherDay>> getWeatherDayByCity(String city);
+  Future<ApiResult<WeatherResponse>> getWeatherDayByGeo(GeolocatorRequest positions);
+  Future<ApiResult<WeatherResponse>> getWeatherDayByCity(String city);
 }
