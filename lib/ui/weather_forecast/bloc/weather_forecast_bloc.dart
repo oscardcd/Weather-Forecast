@@ -4,8 +4,6 @@ import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:injectable/injectable.dart';
-import 'package:weather_forecast_app/domain/models/city.dart';
-import 'package:weather_forecast_app/domain/models/coord.dart';
 import 'package:weather_forecast_app/domain/models/geolocator_request.dart';
 import 'package:weather_forecast_app/domain/models/weather_response.dart';
 import 'package:weather_forecast_app/domain/use_case/weather_day_use_case.dart';
@@ -27,18 +25,14 @@ class WeatherForecastBloc extends Bloc<WeatherForecastEvent, WeatherForecastStat
     final position = await getCurrentPosition();
     final weatherDay = _weatherDayUseCase.getLocalWeatherDay();
 
-    if (weatherDay == null || DateTime.now().hour > 8) {
-      final apiResponse = await getWeatherByGeo(position.latitude, position.longitude);
-
-      final weatherDayList =
-          apiResponse.list.where((element) => element.dtTxt!.toLocal().day == DateTime.now().day).toList();
-      if (weatherDayList.isNotEmpty) {
-        _weatherDayUseCase.saveWeatherDayOnLocal(weatherDayList);
-      }
+    final currentDay = DateTime.now();
+    if (weatherDay == null || currentDay.hour == 00) {
+      WeatherResponse apiResponse = await getWeatherByGeo(position.latitude, position.longitude);
       emit(_FetchWeather(apiResponse));
+
+      _weatherDayUseCase.saveWeatherDayOnLocal(apiResponse);
     } else {
-      final localWeather =
-          WeatherResponse(list: weatherDay, city: City(coord: Coord(lat: position.latitude, lon: position.longitude)));
+      final localWeather = weatherDay;
       emit(_FetchWeather(localWeather));
     }
   }

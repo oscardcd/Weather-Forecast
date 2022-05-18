@@ -33,10 +33,10 @@ class WeatherRepositoryImpl implements WeatherRepository {
   }
 
   @override
-  List<WeatherForecast>? getWeatherDayLocal() => StorageService.instance.getLocalWeatherDay;
+  WeatherResponse? getWeatherDayLocal() => StorageService.instance.getLocalWeatherDay;
 
   @override
-  void saveWeatherDayLocal(List<WeatherForecast> weatherDay) {
+  void saveWeatherDayLocal(WeatherResponse weatherDay) {
     StorageService.instance.saveLocalWeatherDay(weatherDay);
   }
 }

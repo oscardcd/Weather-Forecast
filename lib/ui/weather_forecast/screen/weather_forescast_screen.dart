@@ -36,7 +36,7 @@ class WeatherBody extends StatelessWidget {
                     crossAxisSpacing: 4,
                     children: [
                       WeatherDay(
-                        weatherDay: weatherList.list.first,
+                        weatherDay: weatherList.list.sublist(0, weatherList.list.length),
                         city: weatherList.city,
                       ),
                       WeatherList(weatherList: weatherList.list),

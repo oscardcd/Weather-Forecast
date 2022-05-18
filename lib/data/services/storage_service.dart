@@ -1,7 +1,7 @@
 import 'dart:convert';
 
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:weather_forecast_app/domain/models/weather_forecast.dart';
+import 'package:weather_forecast_app/domain/models/weather_response.dart';
 
 class StorageService {
   StorageService._internal();
@@ -16,15 +16,15 @@ class StorageService {
 
   static late SharedPreferences _preferences;
 
-  void saveLocalWeatherDay(List<WeatherForecast> weatherDay) {
+  void saveLocalWeatherDay(WeatherResponse weatherDay) {
     _preferences.setString(_weatherDay, jsonEncode(weatherDay));
   }
 
-  List<WeatherForecast>? get getLocalWeatherDay {
+  WeatherResponse? get getLocalWeatherDay {
     String? stringWeatherDay = _preferences.getString(_weatherDay);
     if (stringWeatherDay != null && stringWeatherDay != '[]') {
       final json = jsonDecode(stringWeatherDay);
-      final weatherDayList = (json as List).map((e) => WeatherForecast.fromJson(e)).toList();
+      final weatherDayList = WeatherResponse.fromJson(json);
 
       return weatherDayList;
     }
