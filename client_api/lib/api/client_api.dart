@@ -19,7 +19,7 @@ class ClientApi {
       baseUrl: baseUrl,
       headers: headers,
       connectTimeout: 6000,
-      receiveTimeout: 5000,
+      receiveTimeout: 6000,
     ));
 
     if (interceptors != null) {

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
-import 'package:weather_forecast_app/ui/weather_forecast/screen/weather_forescast_screen.dart';
+import 'package:weather_forecast_app/ui/app_theme.dart';
+import 'package:weather_forecast_app/ui/weather_forecast/daily_screen/screen/weather_forecast_screen.dart';
 
 class App extends StatelessWidget {
   const App({Key? key}) : super(key: key);
@@ -9,8 +9,9 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
-      designSize: const Size(390.0, 844.0),
-      child: const MaterialApp(
+      designSize: Size(390.0, 844.0),
+      builder: (_) => MaterialApp(
+        theme: AppTheme.commonTheme,
         debugShowCheckedModeBanner: false,
         home: WeatherForescastScreen(),
       ),

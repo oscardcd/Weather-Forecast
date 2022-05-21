@@ -19,7 +19,7 @@ class WeatherApiImpl implements WeatherApi {
   @override
   Future<ApiResult<WeatherResponse>> getWeatherDayByCity(String city) {
     return clientInstance.request(
-      ApiRequest.get(WeatherEndpoints.byCityName(city)),
+      ApiRequest.get(WeatherEndpoints.byCityName(city), query: {'units': 'metric'}),
       (p0) => WeatherResponse.fromJson(p0),
     );
   }

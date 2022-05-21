@@ -1,7 +1,7 @@
 import 'package:intl/intl.dart';
 
 extension StringExtension on double {
-  String get tempFormat => toInt().toString().padRight(3, ' °C');
+  String get tempFormat => '${this.toInt()} °C';
 }
 
 extension DateExtension on DateTime {
