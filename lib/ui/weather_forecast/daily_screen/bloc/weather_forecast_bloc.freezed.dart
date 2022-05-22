@@ -18,10 +18,6 @@ final _privateConstructorUsedError = UnsupportedError(
 class _$WeatherForecastStateTearOff {
   const _$WeatherForecastStateTearOff();
 
-  _Initial initial() {
-    return const _Initial();
-  }
-
   _LoadInProgress loadInProgress() {
     return const _LoadInProgress();
   }
@@ -29,12 +25,6 @@ class _$WeatherForecastStateTearOff {
   FetchWeather fetchWeather(WeatherResponse weatherDay) {
     return FetchWeather(
       weatherDay,
-    );
-  }
-
-  _ShowCityInput showCityInput(bool isVisible) {
-    return _ShowCityInput(
-      isVisible,
     );
   }
 }
@@ -46,51 +36,39 @@ const $WeatherForecastState = _$WeatherForecastStateTearOff();
 mixin _$WeatherForecastState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() initial,
     required TResult Function() loadInProgress,
     required TResult Function(WeatherResponse weatherDay) fetchWeather,
-    required TResult Function(bool isVisible) showCityInput,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
     TResult Function()? loadInProgress,
     TResult Function(WeatherResponse weatherDay)? fetchWeather,
-    TResult Function(bool isVisible)? showCityInput,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
     TResult Function()? loadInProgress,
     TResult Function(WeatherResponse weatherDay)? fetchWeather,
-    TResult Function(bool isVisible)? showCityInput,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
     required TResult Function(_LoadInProgress value) loadInProgress,
     required TResult Function(FetchWeather value) fetchWeather,
-    required TResult Function(_ShowCityInput value) showCityInput,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
     TResult Function(_LoadInProgress value)? loadInProgress,
     TResult Function(FetchWeather value)? fetchWeather,
-    TResult Function(_ShowCityInput value)? showCityInput,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
     TResult Function(_LoadInProgress value)? loadInProgress,
     TResult Function(FetchWeather value)? fetchWeather,
-    TResult Function(_ShowCityInput value)? showCityInput,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -111,121 +89,6 @@ class _$WeatherForecastStateCopyWithImpl<$Res>
   final WeatherForecastState _value;
   // ignore: unused_field
   final $Res Function(WeatherForecastState) _then;
-}
-
-/// @nodoc
-abstract class _$InitialCopyWith<$Res> {
-  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) =
-      __$InitialCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$InitialCopyWithImpl<$Res>
-    extends _$WeatherForecastStateCopyWithImpl<$Res>
-    implements _$InitialCopyWith<$Res> {
-  __$InitialCopyWithImpl(_Initial _value, $Res Function(_Initial) _then)
-      : super(_value, (v) => _then(v as _Initial));
-
-  @override
-  _Initial get _value => super._value as _Initial;
-}
-
-/// @nodoc
-
-class _$_Initial implements _Initial {
-  const _$_Initial();
-
-  @override
-  String toString() {
-    return 'WeatherForecastState.initial()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _Initial);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() loadInProgress,
-    required TResult Function(WeatherResponse weatherDay) fetchWeather,
-    required TResult Function(bool isVisible) showCityInput,
-  }) {
-    return initial();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loadInProgress,
-    TResult Function(WeatherResponse weatherDay)? fetchWeather,
-    TResult Function(bool isVisible)? showCityInput,
-  }) {
-    return initial?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loadInProgress,
-    TResult Function(WeatherResponse weatherDay)? fetchWeather,
-    TResult Function(bool isVisible)? showCityInput,
-    required TResult orElse(),
-  }) {
-    if (initial != null) {
-      return initial();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_LoadInProgress value) loadInProgress,
-    required TResult Function(FetchWeather value) fetchWeather,
-    required TResult Function(_ShowCityInput value) showCityInput,
-  }) {
-    return initial(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_LoadInProgress value)? loadInProgress,
-    TResult Function(FetchWeather value)? fetchWeather,
-    TResult Function(_ShowCityInput value)? showCityInput,
-  }) {
-    return initial?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_LoadInProgress value)? loadInProgress,
-    TResult Function(FetchWeather value)? fetchWeather,
-    TResult Function(_ShowCityInput value)? showCityInput,
-    required TResult orElse(),
-  }) {
-    if (initial != null) {
-      return initial(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _Initial implements WeatherForecastState {
-  const factory _Initial() = _$_Initial;
 }
 
 /// @nodoc
@@ -269,10 +132,8 @@ class _$_LoadInProgress implements _LoadInProgress {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() initial,
     required TResult Function() loadInProgress,
     required TResult Function(WeatherResponse weatherDay) fetchWeather,
-    required TResult Function(bool isVisible) showCityInput,
   }) {
     return loadInProgress();
   }
@@ -280,10 +141,8 @@ class _$_LoadInProgress implements _LoadInProgress {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
     TResult Function()? loadInProgress,
     TResult Function(WeatherResponse weatherDay)? fetchWeather,
-    TResult Function(bool isVisible)? showCityInput,
   }) {
     return loadInProgress?.call();
   }
@@ -291,10 +150,8 @@ class _$_LoadInProgress implements _LoadInProgress {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
     TResult Function()? loadInProgress,
     TResult Function(WeatherResponse weatherDay)? fetchWeather,
-    TResult Function(bool isVisible)? showCityInput,
     required TResult orElse(),
   }) {
     if (loadInProgress != null) {
@@ -306,10 +163,8 @@ class _$_LoadInProgress implements _LoadInProgress {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
     required TResult Function(_LoadInProgress value) loadInProgress,
     required TResult Function(FetchWeather value) fetchWeather,
-    required TResult Function(_ShowCityInput value) showCityInput,
   }) {
     return loadInProgress(this);
   }
@@ -317,10 +172,8 @@ class _$_LoadInProgress implements _LoadInProgress {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
     TResult Function(_LoadInProgress value)? loadInProgress,
     TResult Function(FetchWeather value)? fetchWeather,
-    TResult Function(_ShowCityInput value)? showCityInput,
   }) {
     return loadInProgress?.call(this);
   }
@@ -328,10 +181,8 @@ class _$_LoadInProgress implements _LoadInProgress {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
     TResult Function(_LoadInProgress value)? loadInProgress,
     TResult Function(FetchWeather value)? fetchWeather,
-    TResult Function(_ShowCityInput value)? showCityInput,
     required TResult orElse(),
   }) {
     if (loadInProgress != null) {
@@ -420,10 +271,8 @@ class _$FetchWeather implements FetchWeather {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() initial,
     required TResult Function() loadInProgress,
     required TResult Function(WeatherResponse weatherDay) fetchWeather,
-    required TResult Function(bool isVisible) showCityInput,
   }) {
     return fetchWeather(weatherDay);
   }
@@ -431,10 +280,8 @@ class _$FetchWeather implements FetchWeather {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
     TResult Function()? loadInProgress,
     TResult Function(WeatherResponse weatherDay)? fetchWeather,
-    TResult Function(bool isVisible)? showCityInput,
   }) {
     return fetchWeather?.call(weatherDay);
   }
@@ -442,10 +289,8 @@ class _$FetchWeather implements FetchWeather {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
     TResult Function()? loadInProgress,
     TResult Function(WeatherResponse weatherDay)? fetchWeather,
-    TResult Function(bool isVisible)? showCityInput,
     required TResult orElse(),
   }) {
     if (fetchWeather != null) {
@@ -457,10 +302,8 @@ class _$FetchWeather implements FetchWeather {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
     required TResult Function(_LoadInProgress value) loadInProgress,
     required TResult Function(FetchWeather value) fetchWeather,
-    required TResult Function(_ShowCityInput value) showCityInput,
   }) {
     return fetchWeather(this);
   }
@@ -468,10 +311,8 @@ class _$FetchWeather implements FetchWeather {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
     TResult Function(_LoadInProgress value)? loadInProgress,
     TResult Function(FetchWeather value)? fetchWeather,
-    TResult Function(_ShowCityInput value)? showCityInput,
   }) {
     return fetchWeather?.call(this);
   }
@@ -479,10 +320,8 @@ class _$FetchWeather implements FetchWeather {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
     TResult Function(_LoadInProgress value)? loadInProgress,
     TResult Function(FetchWeather value)? fetchWeather,
-    TResult Function(_ShowCityInput value)? showCityInput,
     required TResult orElse(),
   }) {
     if (fetchWeather != null) {
@@ -502,163 +341,11 @@ abstract class FetchWeather implements WeatherForecastState {
 }
 
 /// @nodoc
-abstract class _$ShowCityInputCopyWith<$Res> {
-  factory _$ShowCityInputCopyWith(
-          _ShowCityInput value, $Res Function(_ShowCityInput) then) =
-      __$ShowCityInputCopyWithImpl<$Res>;
-  $Res call({bool isVisible});
-}
-
-/// @nodoc
-class __$ShowCityInputCopyWithImpl<$Res>
-    extends _$WeatherForecastStateCopyWithImpl<$Res>
-    implements _$ShowCityInputCopyWith<$Res> {
-  __$ShowCityInputCopyWithImpl(
-      _ShowCityInput _value, $Res Function(_ShowCityInput) _then)
-      : super(_value, (v) => _then(v as _ShowCityInput));
-
-  @override
-  _ShowCityInput get _value => super._value as _ShowCityInput;
-
-  @override
-  $Res call({
-    Object? isVisible = freezed,
-  }) {
-    return _then(_ShowCityInput(
-      isVisible == freezed
-          ? _value.isVisible
-          : isVisible // ignore: cast_nullable_to_non_nullable
-              as bool,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$_ShowCityInput implements _ShowCityInput {
-  const _$_ShowCityInput(this.isVisible);
-
-  @override
-  final bool isVisible;
-
-  @override
-  String toString() {
-    return 'WeatherForecastState.showCityInput(isVisible: $isVisible)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _ShowCityInput &&
-            const DeepCollectionEquality().equals(other.isVisible, isVisible));
-  }
-
-  @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(isVisible));
-
-  @JsonKey(ignore: true)
-  @override
-  _$ShowCityInputCopyWith<_ShowCityInput> get copyWith =>
-      __$ShowCityInputCopyWithImpl<_ShowCityInput>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() loadInProgress,
-    required TResult Function(WeatherResponse weatherDay) fetchWeather,
-    required TResult Function(bool isVisible) showCityInput,
-  }) {
-    return showCityInput(isVisible);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loadInProgress,
-    TResult Function(WeatherResponse weatherDay)? fetchWeather,
-    TResult Function(bool isVisible)? showCityInput,
-  }) {
-    return showCityInput?.call(isVisible);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loadInProgress,
-    TResult Function(WeatherResponse weatherDay)? fetchWeather,
-    TResult Function(bool isVisible)? showCityInput,
-    required TResult orElse(),
-  }) {
-    if (showCityInput != null) {
-      return showCityInput(isVisible);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_LoadInProgress value) loadInProgress,
-    required TResult Function(FetchWeather value) fetchWeather,
-    required TResult Function(_ShowCityInput value) showCityInput,
-  }) {
-    return showCityInput(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_LoadInProgress value)? loadInProgress,
-    TResult Function(FetchWeather value)? fetchWeather,
-    TResult Function(_ShowCityInput value)? showCityInput,
-  }) {
-    return showCityInput?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_LoadInProgress value)? loadInProgress,
-    TResult Function(FetchWeather value)? fetchWeather,
-    TResult Function(_ShowCityInput value)? showCityInput,
-    required TResult orElse(),
-  }) {
-    if (showCityInput != null) {
-      return showCityInput(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _ShowCityInput implements WeatherForecastState {
-  const factory _ShowCityInput(bool isVisible) = _$_ShowCityInput;
-
-  bool get isVisible;
-  @JsonKey(ignore: true)
-  _$ShowCityInputCopyWith<_ShowCityInput> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
 class _$WeatherForecastEventTearOff {
   const _$WeatherForecastEventTearOff();
 
   _Started started() {
     return const _Started();
-  }
-
-  _ActiveCities onActivedCities(bool active) {
-    return _ActiveCities(
-      active,
-    );
   }
 
   _SearchedByCity onSearchedByCity(String city) {
@@ -676,21 +363,18 @@ mixin _$WeatherForecastEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
-    required TResult Function(bool active) onActivedCities,
     required TResult Function(String city) onSearchedByCity,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function(bool active)? onActivedCities,
     TResult Function(String city)? onSearchedByCity,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function(bool active)? onActivedCities,
     TResult Function(String city)? onSearchedByCity,
     required TResult orElse(),
   }) =>
@@ -698,21 +382,18 @@ mixin _$WeatherForecastEvent {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
-    required TResult Function(_ActiveCities value) onActivedCities,
     required TResult Function(_SearchedByCity value) onSearchedByCity,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Started value)? started,
-    TResult Function(_ActiveCities value)? onActivedCities,
     TResult Function(_SearchedByCity value)? onSearchedByCity,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
-    TResult Function(_ActiveCities value)? onActivedCities,
     TResult Function(_SearchedByCity value)? onSearchedByCity,
     required TResult orElse(),
   }) =>
@@ -776,7 +457,6 @@ class _$_Started implements _Started {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
-    required TResult Function(bool active) onActivedCities,
     required TResult Function(String city) onSearchedByCity,
   }) {
     return started();
@@ -786,7 +466,6 @@ class _$_Started implements _Started {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function(bool active)? onActivedCities,
     TResult Function(String city)? onSearchedByCity,
   }) {
     return started?.call();
@@ -796,7 +475,6 @@ class _$_Started implements _Started {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function(bool active)? onActivedCities,
     TResult Function(String city)? onSearchedByCity,
     required TResult orElse(),
   }) {
@@ -810,7 +488,6 @@ class _$_Started implements _Started {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
-    required TResult Function(_ActiveCities value) onActivedCities,
     required TResult Function(_SearchedByCity value) onSearchedByCity,
   }) {
     return started(this);
@@ -820,7 +497,6 @@ class _$_Started implements _Started {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Started value)? started,
-    TResult Function(_ActiveCities value)? onActivedCities,
     TResult Function(_SearchedByCity value)? onSearchedByCity,
   }) {
     return started?.call(this);
@@ -830,7 +506,6 @@ class _$_Started implements _Started {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
-    TResult Function(_ActiveCities value)? onActivedCities,
     TResult Function(_SearchedByCity value)? onSearchedByCity,
     required TResult orElse(),
   }) {
@@ -843,146 +518,6 @@ class _$_Started implements _Started {
 
 abstract class _Started implements WeatherForecastEvent {
   const factory _Started() = _$_Started;
-}
-
-/// @nodoc
-abstract class _$ActiveCitiesCopyWith<$Res> {
-  factory _$ActiveCitiesCopyWith(
-          _ActiveCities value, $Res Function(_ActiveCities) then) =
-      __$ActiveCitiesCopyWithImpl<$Res>;
-  $Res call({bool active});
-}
-
-/// @nodoc
-class __$ActiveCitiesCopyWithImpl<$Res>
-    extends _$WeatherForecastEventCopyWithImpl<$Res>
-    implements _$ActiveCitiesCopyWith<$Res> {
-  __$ActiveCitiesCopyWithImpl(
-      _ActiveCities _value, $Res Function(_ActiveCities) _then)
-      : super(_value, (v) => _then(v as _ActiveCities));
-
-  @override
-  _ActiveCities get _value => super._value as _ActiveCities;
-
-  @override
-  $Res call({
-    Object? active = freezed,
-  }) {
-    return _then(_ActiveCities(
-      active == freezed
-          ? _value.active
-          : active // ignore: cast_nullable_to_non_nullable
-              as bool,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$_ActiveCities implements _ActiveCities {
-  const _$_ActiveCities(this.active);
-
-  @override
-  final bool active;
-
-  @override
-  String toString() {
-    return 'WeatherForecastEvent.onActivedCities(active: $active)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _ActiveCities &&
-            const DeepCollectionEquality().equals(other.active, active));
-  }
-
-  @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(active));
-
-  @JsonKey(ignore: true)
-  @override
-  _$ActiveCitiesCopyWith<_ActiveCities> get copyWith =>
-      __$ActiveCitiesCopyWithImpl<_ActiveCities>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() started,
-    required TResult Function(bool active) onActivedCities,
-    required TResult Function(String city) onSearchedByCity,
-  }) {
-    return onActivedCities(active);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? started,
-    TResult Function(bool active)? onActivedCities,
-    TResult Function(String city)? onSearchedByCity,
-  }) {
-    return onActivedCities?.call(active);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? started,
-    TResult Function(bool active)? onActivedCities,
-    TResult Function(String city)? onSearchedByCity,
-    required TResult orElse(),
-  }) {
-    if (onActivedCities != null) {
-      return onActivedCities(active);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Started value) started,
-    required TResult Function(_ActiveCities value) onActivedCities,
-    required TResult Function(_SearchedByCity value) onSearchedByCity,
-  }) {
-    return onActivedCities(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Started value)? started,
-    TResult Function(_ActiveCities value)? onActivedCities,
-    TResult Function(_SearchedByCity value)? onSearchedByCity,
-  }) {
-    return onActivedCities?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Started value)? started,
-    TResult Function(_ActiveCities value)? onActivedCities,
-    TResult Function(_SearchedByCity value)? onSearchedByCity,
-    required TResult orElse(),
-  }) {
-    if (onActivedCities != null) {
-      return onActivedCities(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _ActiveCities implements WeatherForecastEvent {
-  const factory _ActiveCities(bool active) = _$_ActiveCities;
-
-  bool get active;
-  @JsonKey(ignore: true)
-  _$ActiveCitiesCopyWith<_ActiveCities> get copyWith =>
-      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -1051,7 +586,6 @@ class _$_SearchedByCity implements _SearchedByCity {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
-    required TResult Function(bool active) onActivedCities,
     required TResult Function(String city) onSearchedByCity,
   }) {
     return onSearchedByCity(city);
@@ -1061,7 +595,6 @@ class _$_SearchedByCity implements _SearchedByCity {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function(bool active)? onActivedCities,
     TResult Function(String city)? onSearchedByCity,
   }) {
     return onSearchedByCity?.call(city);
@@ -1071,7 +604,6 @@ class _$_SearchedByCity implements _SearchedByCity {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function(bool active)? onActivedCities,
     TResult Function(String city)? onSearchedByCity,
     required TResult orElse(),
   }) {
@@ -1085,7 +617,6 @@ class _$_SearchedByCity implements _SearchedByCity {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
-    required TResult Function(_ActiveCities value) onActivedCities,
     required TResult Function(_SearchedByCity value) onSearchedByCity,
   }) {
     return onSearchedByCity(this);
@@ -1095,7 +626,6 @@ class _$_SearchedByCity implements _SearchedByCity {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Started value)? started,
-    TResult Function(_ActiveCities value)? onActivedCities,
     TResult Function(_SearchedByCity value)? onSearchedByCity,
   }) {
     return onSearchedByCity?.call(this);
@@ -1105,7 +635,6 @@ class _$_SearchedByCity implements _SearchedByCity {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
-    TResult Function(_ActiveCities value)? onActivedCities,
     TResult Function(_SearchedByCity value)? onSearchedByCity,
     required TResult orElse(),
   }) {

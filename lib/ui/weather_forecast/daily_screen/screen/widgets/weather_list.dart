@@ -36,27 +36,31 @@ class WeatherList extends StatelessWidget {
                 (index) => StaggeredGridTile.count(
                   crossAxisCellCount: 5,
                   mainAxisCellCount: 1.1,
-                  child: Card(
-                    elevation: 4,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.horizontal(
-                        right: Radius.circular(50),
+                  child: InkWell(
+                    onTap: () => Navigator.push(
+                        context, MaterialPageRoute(builder: (_) => CommingDayScreen(commingDay: weatherByDays[index]))),
+                    child: Card(
+                      elevation: 4,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.horizontal(
+                          right: Radius.circular(50),
+                        ),
                       ),
-                    ),
-                    child: ListTile(
-                      title: Text(weatherByDays[index].dtTxt!.dayWithMonth),
-                      subtitle: Text(weatherByDays[index].weather!.first.description),
-                      trailing: Row(
-                        mainAxisSize: MainAxisSize.min,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          Image(
-                            image: NetworkImage(
-                                'http://openweathermap.org/img/wn/${weatherByDays[index].weather!.first.icon}@2x.png',
-                                scale: 1.5),
-                          ),
-                          Text(weatherByDays[index].main!.temp.tempFormat),
-                        ],
+                      child: ListTile(
+                        title: Text(weatherByDays[index].dtTxt!.dayWithMonth),
+                        subtitle: Text(weatherByDays[index].weather!.first.description),
+                        trailing: Row(
+                          mainAxisSize: MainAxisSize.min,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            Image(
+                              image: NetworkImage(
+                                  'http://openweathermap.org/img/wn/${weatherByDays[index].weather!.first.icon}@2x.png',
+                                  scale: 1.5),
+                            ),
+                            Text(weatherByDays[index].main!.temp.tempFormat),
+                          ],
+                        ),
                       ),
                     ),
                   ),

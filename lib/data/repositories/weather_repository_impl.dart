@@ -1,7 +1,6 @@
 import 'package:injectable/injectable.dart';
 import 'package:weather_forecast_app/data/services/storage_service.dart';
 import 'package:weather_forecast_app/domain/models/geolocator_request.dart';
-import 'package:weather_forecast_app/domain/models/weather_forecast.dart';
 import 'package:weather_forecast_app/domain/models/weather_response.dart';
 import 'package:weather_forecast_app/domain/repositories/weather_repository.dart';
 import 'package:weather_forecast_app/domain/services/weather_api.dart';

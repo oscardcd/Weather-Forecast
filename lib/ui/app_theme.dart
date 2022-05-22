@@ -42,7 +42,7 @@ abstract class AppTheme {
       textColor: AppColors.black,
     ),
     iconTheme: const IconThemeData(
-      color: AppColors.whiteblue,
+      color: AppColors.white,
       size: 18.0,
     ),
     primaryIconTheme: const IconThemeData(
@@ -56,6 +56,13 @@ abstract class AppTheme {
       focusedErrorBorder: _getOutlineBorder(isValid: false),
     ),
     textTheme: TextTheme(
+      headline1: GoogleFonts.sourceSerifPro(
+        textStyle: TextStyle(
+          color: AppColors.blue,
+          fontSize: 38.sp,
+          fontWeight: FontWeight.bold,
+        ),
+      ),
       headline2: GoogleFonts.sourceSerifPro(
         textStyle: TextStyle(
           color: AppColors.blue,
@@ -95,7 +102,7 @@ abstract class AppColors {
   static const Color lightCyan = Color(0xFFCCE0E6);
   static const Color mediumBlue = Color(0xFFDFEAF2);
   static const Color mediumBlueDark = Color(0xFFAAC3D8);
-  static const Color whiteblue = Color(0xFFDFF5F4);
+  static const Color white = Color(0xFFDFF5F4);
   static const Color whiteblue75 = Color(0xBFDFF5F4);
   static const Color opaqueBlue = Color(0xFF001B2C);
   static const Color grey = Color.fromARGB(255, 87, 87, 87);

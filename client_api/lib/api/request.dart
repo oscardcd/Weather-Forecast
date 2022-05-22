@@ -1,5 +1,7 @@
 import 'package:client_api/api/http_methods.dart';
 
+
+//configure the diferents types of call http
 class ApiRequest {
   final String url;
   final String method;

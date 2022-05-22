@@ -4,6 +4,7 @@ import 'package:weather_forecast_app/domain/repositories/geolocator_repository.d
 
 @Injectable(as: GeolocatorRepository)
 class GeolocatorRepositoryImpl implements GeolocatorRepository {
+  //this method verify permitions in the device and get the current position
   @override
   Future<Position> determinePosition() async {
     bool serviceEnabled;

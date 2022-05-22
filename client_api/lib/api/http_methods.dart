@@ -1,3 +1,5 @@
+//instance the type methods
+
 class HttpMethods {
   static const String get = 'GET';
   static const String post = 'POST';

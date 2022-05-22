@@ -3,6 +3,7 @@ import 'package:dio/dio.dart';
 
 import 'model/api_result.dart';
 
+//with dio we configure an api client with diferents options
 class ClientApi {
   ClientApi._privateConstructor();
   static final ClientApi _instance = ClientApi._privateConstructor();
@@ -10,6 +11,7 @@ class ClientApi {
   static ClientApi get instance => _instance;
   late Dio dio;
 
+//init with options base
   init({
     required String baseUrl,
     required Map<String, Object> headers,
@@ -21,12 +23,13 @@ class ClientApi {
       connectTimeout: 6000,
       receiveTimeout: 6000,
     ));
-
+//verify if exist interceptors like apilogger or apikey
     if (interceptors != null) {
       _instance.dio.interceptors.addAll(interceptors);
     }
   }
 
+  //make a method to the request that return a success or fairule from api result
   Future<ApiResult<T>> request<T>(ApiRequest request, Function(dynamic) fromJson) async {
     try {
       final response = await _instance.dio.request(request.url,

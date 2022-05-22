@@ -8,6 +8,8 @@ import 'package:weather_forecast_app/domain/services/weather_api.dart';
 @Injectable(as: WeatherApi)
 class WeatherApiImpl implements WeatherApi {
   final clientInstance = ClientApi.instance;
+
+  //call to the api for request information by geolocalization
   @override
   Future<ApiResult<WeatherResponse>> getWeatherDayByGeo(GeolocatorRequest positions) {
     return clientInstance.request(
@@ -16,6 +18,7 @@ class WeatherApiImpl implements WeatherApi {
     );
   }
 
+//call to the api for request information by city name
   @override
   Future<ApiResult<WeatherResponse>> getWeatherDayByCity(String city) {
     return clientInstance.request(

@@ -8,6 +8,7 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    //the screen util help with the size of component in other screen
     return ScreenUtilInit(
       designSize: Size(390.0, 844.0),
       builder: (_) => MaterialApp(

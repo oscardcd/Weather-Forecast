@@ -16,14 +16,16 @@ part 'weather_forecast_bloc.freezed.dart';
 
 @injectable
 class WeatherForecastBloc extends Bloc<WeatherForecastEvent, WeatherForecastState> {
-  WeatherForecastBloc(this._weatherDayUseCase) : super(const WeatherForecastState.initial()) {
+  WeatherForecastBloc(this._weatherDayUseCase) : super(const WeatherForecastState.loadInProgress()) {
     init();
     on<_Started>(_onStartedToStated);
     on<_SearchedByCity>(_searchByCityToState);
   }
 
+  // this use case help to centralizate the call to the repository and have the bloc more clean posible
   final WeatherDayUseCase _weatherDayUseCase;
 
+  // this editing controller is for obtaint the information from the input and evit that create the controller in the view
   late TextEditingController _cityName;
 
   TextEditingController get cityName => _cityName;
@@ -31,6 +33,7 @@ class WeatherForecastBloc extends Bloc<WeatherForecastEvent, WeatherForecastStat
     _cityName = TextEditingController();
   }
 
+  //this method works when the screen init and consult the curren position and the weather forecast
   FutureOr<void> _onStartedToStated(_Started event, Emitter<WeatherForecastState> emit) async {
     emit(_LoadInProgress());
     final position = await getCurrentPosition();
@@ -48,10 +51,11 @@ class WeatherForecastBloc extends Bloc<WeatherForecastEvent, WeatherForecastStat
         emit(FetchWeather(localWeather));
       }
     } catch (e) {
-      print(e);
+      throw e;
     }
   }
 
+  //methos for the position
   Future<Position> getCurrentPosition() async {
     try {
       return await _weatherDayUseCase.getPosition();
@@ -60,15 +64,16 @@ class WeatherForecastBloc extends Bloc<WeatherForecastEvent, WeatherForecastStat
     }
   }
 
+  //metthos for get by city
   Future<WeatherResponse> getWeatherDayForCity(city) async {
     try {
       return await _weatherDayUseCase.getWeatherDayForCity(city);
     } catch (e) {
-      print(e);
       throw e;
     }
   }
 
+  //method to get by geolocalization it need latitude and longitud
   Future<WeatherResponse> getWeatherByGeo(double lat, double lon) async {
     try {
       final request = GeolocatorRequest(lat: lat, lon: lon);
@@ -86,10 +91,11 @@ class WeatherForecastBloc extends Bloc<WeatherForecastEvent, WeatherForecastStat
       _weatherDayUseCase.saveWeatherDayOnLocal(apiResponse);
       InputCubit().onChanged(false);
     } catch (e) {
-      print(e);
+      throw e;
     }
   }
 
+//dispose the controller
   @override
   Future<void> close() {
     _cityName.dispose();

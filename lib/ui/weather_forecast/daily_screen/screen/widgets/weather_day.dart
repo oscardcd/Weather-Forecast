@@ -18,7 +18,7 @@ class _WeatherDayState extends State<WeatherDay> with TickerProviderStateMixin {
   }
 
   double _sizeHeader = 0.0;
-
+  //this delay is for show the animation when the screen is ready.
   void delayd() async {
     await Future.delayed(
       Duration(milliseconds: 800),
@@ -30,16 +30,22 @@ class _WeatherDayState extends State<WeatherDay> with TickerProviderStateMixin {
 
   @override
   Widget build(BuildContext context) {
+    //obtain the screen size (heigt and wid)
     final size = MediaQuery.of(context).size;
-    final weatherDay = widget.weatherDay;
 
+    //obtain the information from the previous screen
+    final weatherDay = widget.weatherDay;
     final city = widget.city;
+
+    //create a instance for current weather day
     WeatherForecast currentWeather = weatherDay
         .where((element) =>
             element.dtTxt != null &&
             (element.dtTxt!.toLocal().hour >= DateTime.now().hour ||
                 element.dtTxt!.hour >= DateTime.now().toUtc().hour))
         .first;
+
+    //obtain the input cubid for manage the input for search the weather forecast by city
     return BlocProvider(
       create: (context) => GetIt.I.get<InputCubit>(),
       child: StaggeredGridTile.fit(
@@ -63,73 +69,22 @@ class _WeatherDayState extends State<WeatherDay> with TickerProviderStateMixin {
                   Column(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
+                      //show the current city and country
                       WeatherDayUbication(city: city),
                       SizedBox(height: 10.h),
                       Row(
                         children: [
+                          //show a list with the day weather divide in segments of three hours
                           WeatherDayHourSegments(weatherDay: weatherDay),
                           Spacer(),
+                          //show the current temp on the day
                           CurrentWeatherDay(currenWeatherDay: currentWeather),
                         ],
                       ),
                       SizedBox(height: 10.h),
                     ],
                   ),
-                  BlocSelector<InputCubit, bool, bool>(
-                    selector: (state) => state,
-                    builder: (context, isVisible) {
-                      if (!isVisible) return SizedBox.shrink();
-                      return Padding(
-                        padding: const EdgeInsets.only(top: 65.0),
-                        child: Container(
-                          decoration: BoxDecoration(
-                            color: Color.fromARGB(227, 240, 250, 255),
-                            borderRadius: BorderRadius.circular(20),
-                          ),
-                          child: Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Row(
-                              children: [
-                                Container(
-                                  width: MediaQuery.of(context).size.width * 0.6,
-                                  child: TextFormField(
-                                    controller: context.read<WeatherForecastBloc>().cityName,
-                                    decoration: InputDecoration(
-                                      hintText: 'City Name',
-                                      isDense: true,
-                                      hintStyle: Theme.of(context).textTheme.bodyText2!.copyWith(
-                                            color: Colors.black.withOpacity(.3),
-                                          ),
-                                    ),
-                                    keyboardType: TextInputType.text,
-                                    onFieldSubmitted: (val) {},
-                                    style: Theme.of(context).textTheme.bodyText2,
-                                  ),
-                                ),
-                                Spacer(),
-                                TextButton(
-                                  onPressed: () => context.read<WeatherForecastBloc>().add(
-                                      WeatherForecastEvent.onSearchedByCity(
-                                          context.read<WeatherForecastBloc>().cityName.text)),
-                                  child: Text('Search', style: TextStyle(color: Color(0xFF000000))),
-                                  style: TextButton.styleFrom(
-                                    backgroundColor: Color.fromARGB(255, 231, 239, 239),
-                                    shape: RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(8),
-                                      side: BorderSide(
-                                        color: Color.fromARGB(255, 13, 23, 23),
-                                        width: 2,
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-                      );
-                    },
-                  ),
+                  CitySearchInput(),
                 ],
               ),
             ),
@@ -146,30 +101,31 @@ class WeatherDayUbication extends StatelessWidget {
   final City city;
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: [
-        Text(
-          '${city.name}, ${city.country} ',
-          style: TextStyle(
-            fontSize: 25,
-          ),
-        ),
-        BlocSelector<InputCubit, bool, bool>(
-          selector: (state) => state,
-          builder: (context, state) {
-            return InkWell(
-              onTap: () {
-                context.read<InputCubit>().onChanged(!state);
-              },
-              child: Icon(
-                Icons.location_on_outlined,
-                size: 40,
-              ),
-            );
-          },
-        )
-      ],
-    );
+    //with this selector we show or not the input to search by city
+    return BlocSelector<InputCubit, bool, bool>(
+        selector: (state) => state,
+        builder: (context, state) {
+          return InkWell(
+            onTap: () {
+              //on tap send the state the opposite state to change if the widget show or not
+              context.read<InputCubit>().onChanged(!state);
+            },
+            child: Row(
+              children: [
+                Text(
+                  '${city.name}, ${city.country} ',
+                  style: TextStyle(
+                    fontSize: 25,
+                  ),
+                ),
+                Icon(
+                  Icons.location_on_outlined,
+                  size: 40,
+                ),
+              ],
+            ),
+          );
+        });
   }
 }
 
@@ -270,6 +226,70 @@ class ItemInformation extends StatelessWidget {
         ),
         Text(description)
       ],
+    );
+  }
+}
+
+class CitySearchInput extends StatelessWidget {
+  const CitySearchInput({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return BlocSelector<InputCubit, bool, bool>(
+      selector: (state) => state,
+      builder: (context, isVisible) {
+        if (!isVisible) return SizedBox.shrink();
+        return Padding(
+          padding: const EdgeInsets.only(top: 65.0),
+          child: Container(
+            decoration: BoxDecoration(
+              color: Color.fromARGB(227, 240, 250, 255),
+              borderRadius: BorderRadius.circular(20),
+            ),
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Row(
+                children: [
+                  Container(
+                    width: MediaQuery.of(context).size.width * 0.6,
+                    child: TextFormField(
+                      controller: context.read<WeatherForecastBloc>().cityName,
+                      decoration: InputDecoration(
+                        hintText: 'City Name',
+                        isDense: true,
+                        hintStyle: Theme.of(context).textTheme.bodyText2!.copyWith(
+                              color: Colors.black.withOpacity(.3),
+                            ),
+                      ),
+                      keyboardType: TextInputType.text,
+                      onFieldSubmitted: (val) =>
+                          context.read<WeatherForecastBloc>().add(WeatherForecastEvent.onSearchedByCity(val)),
+                      style: Theme.of(context).textTheme.bodyText2,
+                    ),
+                  ),
+                  Spacer(),
+                  TextButton(
+                    onPressed: () => context
+                        .read<WeatherForecastBloc>()
+                        .add(WeatherForecastEvent.onSearchedByCity(context.read<WeatherForecastBloc>().cityName.text)),
+                    child: Text('Search', style: TextStyle(color: Color(0xFF000000))),
+                    style: TextButton.styleFrom(
+                      backgroundColor: Color.fromARGB(255, 231, 239, 239),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(8),
+                        side: BorderSide(
+                          color: Color.fromARGB(255, 13, 23, 23),
+                          width: 2,
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+        );
+      },
     );
   }
 }
