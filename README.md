@@ -14,7 +14,7 @@ for example:
 - build runner.
 - json notation.
 
-This packages give the oportuninitie to create some autogenerate files for example. files to map te information from jason or to json without you need write all codec about the models.
+This packages give the oportunitie to create some autogenerate files for example. files to map te information from jason or to json without you need write all code about the models.
 
 For the creation of the autogenerate files we need use in the terminal into de project the codec:
 
